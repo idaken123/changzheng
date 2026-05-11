@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>长征数字地图</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/timeline.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/stories.css">
+    <link rel="stylesheet" href="css/media.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-main">
+            <p class="eyebrow">1934-1936 | 红军长征专题学习平台</p>
+            <h1>长征数字地图</h1>
+        </div>
+        <nav class="nav-tabs" aria-label="主导航">
+            <button class="nav-tab active" data-tab="map">数字地图</button>
+            <button class="nav-tab" data-tab="stories">经典故事</button>
+            <button class="nav-tab" data-tab="battles">战役解说</button>
+            <button class="nav-tab" data-tab="media">历史影像</button>
+            <button class="nav-tab" data-tab="quiz">知识问答</button>
+            <button class="nav-tab" data-tab="discussion">讨论</button>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <section id="mapPanel" class="panel active" aria-label="长征路线地图">
+            <aside class="timeline-panel">
+                <div class="timeline-title">
+                    <span>长征历程</span>
+                    <small>中央红军主线节点</small>
+                </div>
+                <div class="timeline-controls">
+                    <button id="playBtn" class="control-btn primary" type="button" onclick="playTimeline()">播放</button>
+                    <button class="control-btn" type="button" onclick="prevEvent()">上一站</button>
+                    <button class="control-btn" type="button" onclick="nextEvent()">下一站</button>
+                    <span id="progressText" class="progress-text">1 / 11</span>
+                </div>
+                <div class="timeline-progress-container" aria-hidden="true">
+                    <div class="timeline-progress-bar">
+                        <div id="timelineProgress" class="timeline-progress-fill"></div>
+                    </div>
+                </div>
+                <div id="timeline" class="timeline-list"></div>
+            </aside>
+
+            <section class="map-panel">
+                <div id="map"></div>
+                <div class="map-overlay">
+                    <div class="route-filter" aria-label="路线开关">
+                        <button class="route-toggle active" type="button" data-route="red1">红一方面军</button>
+                        <button class="route-toggle active" type="button" data-route="red2">红二方面军</button>
+                        <button class="route-toggle active" type="button" data-route="red4">红四方面军</button>
+                        <button class="route-toggle active" type="button" data-route="red25">红25军</button>
+                    </div>
+                </div>
+                <div class="legend">
+                    <h4>路线图例</h4>
+                    <div class="legend-item"><span class="legend-color red1"></span>红一方面军</div>
+                    <div class="legend-item"><span class="legend-color red2"></span>红二方面军</div>
+                    <div class="legend-item"><span class="legend-color red4"></span>红四方面军</div>
+                    <div class="legend-item"><span class="legend-color red25"></span>红25军</div>
+                </div>
+            </section>
+        </section>
+
+        <section id="storiesPanel" class="panel" aria-label="长征经典故事">
+            <div class="content-panel stories-panel">
+                <div class="section-header">
+                    <h2>长征经典故事</h2>
+                </div>
+                <div id="storiesGrid" class="stories-grid"></div>
+            </div>
+        </section>
+
+        <section id="mediaPanel" class="panel" aria-label="长征历史影像">
+            <div class="content-panel media-panel">
+                <div class="section-header">
+                    <h2>长征历史影像</h2>
+                </div>
+
+                <section class="media-section">
+                    <h3>历史真实影像</h3>
+                    <div id="imageGallery" class="media-gallery"></div>
+                </section>
+
+                <section class="media-section">
+                    <h3>纪录片与视频</h3>
+                    <div id="videoList" class="video-list"></div>
+                </section>
+
+                <section class="media-section">
+                    <h3>音频与朗诵</h3>
+                    <div id="audioList" class="audio-list"></div>
+                </section>
+            </div>
+        </section>
+
+        <section id="battlesPanel" class="panel" aria-label="长征著名战役解说">
+            <div class="content-panel battles-panel">
+                <div class="section-header">
+                    <h2>著名战役解说</h2>
+                </div>
+                <div id="battlesGrid" class="battles-grid"></div>
+            </div>
+        </section>
+
+        <section id="quizPanel" class="panel" aria-label="长征知识问答">
+            <div class="content-panel quiz-panel">
+                <div class="section-header">
+                    <h2>长征知识问答</h2>
+                </div>
+                <div class="quiz-shell">
+                    <div class="quiz-card">
+                        <div class="quiz-topline">
+                            <span id="quizCounter">第 1 题</span>
+                            <span id="quizScore">得分 0</span>
+                        </div>
+                        <div class="quiz-progress">
+                            <div id="quizProgressBar"></div>
+                        </div>
+                        <h3 id="quizQuestion"></h3>
+                        <div id="quizOptions" class="quiz-options"></div>
+                        <div id="quizFeedback" class="quiz-feedback" aria-live="polite"></div>
+                        <div class="quiz-actions">
+                            <button id="quizNextBtn" class="control-btn primary" type="button">下一题</button>
+                            <button id="quizRestartBtn" class="control-btn" type="button">重新开始</button>
+                        </div>
+                    </div>
+                    <aside class="quiz-side">
+                        <h3>答题成绩</h3>
+                        <div id="quizResult" class="quiz-result"></div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section id="discussionPanel" class="panel" aria-label="长征主题讨论">
+            <div class="content-panel discussion-panel">
+                <div class="section-header">
+                    <h2>主题讨论</h2>
+                </div>
+                <div class="discussion-shell">
+                    <form id="commentForm" class="comment-form">
+                        <label for="commentName">昵称</label>
+                        <input id="commentName" type="text" maxlength="18" placeholder="请输入昵称" required>
+                        <label for="commentText">评论</label>
+                        <textarea id="commentText" rows="5" maxlength="300" placeholder="写下你的观点、问题或学习收获" required></textarea>
+                        <div class="comment-actions">
+                            <span id="commentCount">0 条评论</span>
+                            <button class="control-btn primary" type="submit">发布评论</button>
+                        </div>
+                    </form>
+                    <div id="commentList" class="comment-list"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal-overlay" id="eventModal">
+        <article class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div class="modal-header">
+                <div class="modal-header-text">
+                    <h2 id="modalTitle"></h2>
+                    <div class="modal-date" id="modalDate"></div>
+                </div>
+                <button class="modal-close" type="button" aria-label="关闭">&times;</button>
+            </div>
+            <div class="modal-body">
+                <section class="modal-section">
+                    <h3>事件详情</h3>
+                    <p id="modalDetails"></p>
+                </section>
+                <section class="modal-section">
+                    <h3>历史意义</h3>
+                    <p id="modalSignificance"></p>
+                </section>
+                <section class="modal-section">
+                    <h3>关键数据</h3>
+                    <div class="modal-stats">
+                        <div class="stat-item"><div class="stat-value" id="stat1Value">-</div><div class="stat-label" id="stat1Label">时间/规模</div></div>
+                        <div class="stat-item"><div class="stat-value" id="stat2Value">-</div><div class="stat-label" id="stat2Label">距离/战况</div></div>
+                        <div class="stat-item"><div class="stat-value" id="stat3Value">-</div><div class="stat-label" id="stat3Label">结果/意义</div></div>
+                    </div>
+                </section>
+                <div class="modal-quote" id="modalQuote"></div>
+            </div>
+            <div class="modal-nav">
+                <button class="modal-nav-btn" id="prevEventBtn" type="button">上一事件</button>
+                <button class="modal-nav-btn" id="nextEventBtn" type="button">下一事件</button>
+            </div>
+        </article>
+    </div>
+
+    <div class="modal-overlay" id="storyModal">
+        <article class="modal-content" role="dialog" aria-modal="true" aria-labelledby="storyModalTitle">
+            <div class="modal-header">
+                <div class="modal-header-text">
+                    <h2 id="storyModalTitle"></h2>
+                    <div class="modal-date">
+                        <span id="storyModalTag" class="story-modal-tag"></span>
+                        <span id="storyModalLocation"></span>
+                    </div>
+                </div>
+                <button class="modal-close" type="button" aria-label="关闭">&times;</button>
+            </div>
+            <div class="modal-body">
+                <section class="modal-section">
+                    <p id="storyModalContent"></p>
+                </section>
+            </div>
+        </article>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/timeline.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/stories.js"></script>
+    <script src="js/battles.js"></script>
+    <script src="js/media.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/discussion.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

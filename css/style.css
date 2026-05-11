@@ -1,0 +1,459 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-red: #b91c1c;
+    --deep-red: #7f1d1d;
+    --gold: #d6a84f;
+    --ink: #1f2933;
+    --panel: #fffaf0;
+    --paper: #fffdf7;
+    --muted: #6b6258;
+    --line: rgba(95, 65, 36, 0.16);
+    --shadow: 0 18px 45px rgba(68, 36, 17, 0.16);
+}
+
+body {
+    font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif;
+    min-height: 100vh;
+    color: var(--ink);
+    background:
+        linear-gradient(rgba(255, 251, 242, 0.94), rgba(255, 251, 242, 0.94)),
+        radial-gradient(circle at 20% 10%, rgba(185, 28, 28, 0.18), transparent 34%),
+        radial-gradient(circle at 80% 0%, rgba(214, 168, 79, 0.24), transparent 30%),
+        #f5efe3;
+    overflow: hidden;
+}
+
+button,
+a {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.header {
+    height: 82px;
+    padding: 14px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    background: rgba(255, 253, 247, 0.92);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 10px 30px rgba(95, 65, 36, 0.08);
+    position: relative;
+    z-index: 20;
+}
+
+.header-main h1 {
+    font-size: 1.75rem;
+    color: var(--deep-red);
+    letter-spacing: 0;
+    line-height: 1.1;
+}
+
+.eyebrow {
+    color: var(--primary-red);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.nav-tabs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.nav-tab,
+.route-toggle,
+.control-btn,
+.modal-nav-btn {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff8ea;
+    color: var(--ink);
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-tab {
+    padding: 9px 15px;
+    font-size: 0.92rem;
+}
+
+.nav-tab:hover,
+.nav-tab.active,
+.route-toggle:hover,
+.route-toggle.active {
+    background: var(--primary-red);
+    color: #fff;
+    border-color: var(--primary-red);
+}
+
+.main-container {
+    height: calc(100vh - 82px);
+    overflow: hidden;
+}
+
+.panel {
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+
+.panel.active {
+    display: flex;
+}
+
+.content-panel {
+    flex: 1;
+    overflow-y: auto;
+    padding: 34px;
+}
+
+.section-header {
+    max-width: 980px;
+    margin: 0 auto 28px;
+}
+
+.section-header h2 {
+    color: var(--deep-red);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.section-header p:not(.eyebrow) {
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.timeline-panel {
+    width: 410px;
+    flex-shrink: 0;
+    overflow-y: auto;
+    background: rgba(255, 253, 247, 0.92);
+    border-right: 1px solid var(--line);
+}
+
+.timeline-panel::-webkit-scrollbar,
+.content-panel::-webkit-scrollbar,
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.timeline-panel::-webkit-scrollbar-thumb,
+.content-panel::-webkit-scrollbar-thumb,
+.modal-content::-webkit-scrollbar-thumb {
+    background: rgba(185, 28, 28, 0.45);
+    border-radius: 8px;
+}
+
+.map-panel {
+    flex: 1;
+    position: relative;
+    min-width: 0;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    background: #e8dcc7;
+}
+
+.map-overlay {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    z-index: 600;
+    width: min(420px, calc(100% - 36px));
+    pointer-events: none;
+}
+
+.route-filter,
+.event-summary,
+.legend {
+    pointer-events: auto;
+    background: rgba(255, 253, 247, 0.95);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.battles-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    gap: 16px;
+}
+
+.battle-card {
+    display: grid;
+    grid-template-columns: 88px minmax(0, 1fr);
+    overflow: hidden;
+    background: rgba(255, 253, 247, 0.9);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: 0 10px 28px rgba(95, 65, 36, 0.08);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.battle-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(185, 28, 28, 0.34);
+    box-shadow: var(--shadow);
+}
+
+.battle-index {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--deep-red);
+    color: #fff8ea;
+    font-size: 1.55rem;
+    font-weight: 900;
+}
+
+.battle-body {
+    padding: 20px;
+}
+
+.battle-meta {
+    color: var(--primary-red);
+    font-size: 0.84rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.battle-body h3 {
+    color: var(--deep-red);
+    font-size: 1.22rem;
+    margin-bottom: 8px;
+}
+
+.battle-body p:not(.battle-meta) {
+    color: var(--muted);
+    line-height: 1.75;
+}
+
+.battle-link {
+    margin-top: 14px;
+}
+
+.battle-ready,
+.battle-empty {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    border-radius: 8px;
+    padding: 7px 12px;
+    font-size: 0.88rem;
+    font-weight: 800;
+}
+
+.battle-ready {
+    background: var(--primary-red);
+    color: #fff;
+}
+
+.battle-empty {
+    background: #fff5e1;
+    color: var(--muted);
+    border: 1px dashed rgba(127, 29, 29, 0.28);
+}
+
+.route-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 10px;
+    margin-bottom: 12px;
+}
+
+.route-toggle {
+    padding: 7px 10px;
+    font-size: 0.82rem;
+}
+
+.event-summary {
+    padding: 16px;
+}
+
+.event-summary span {
+    color: var(--primary-red);
+    font-size: 0.84rem;
+    font-weight: 700;
+}
+
+.event-summary strong {
+    display: block;
+    margin: 5px 0 8px;
+    font-size: 1.12rem;
+    color: var(--deep-red);
+}
+
+.event-summary p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.event-summary button,
+.event-popup button {
+    margin-top: 12px;
+    padding: 8px 12px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--primary-red);
+    color: #fff;
+}
+
+.legend {
+    position: absolute;
+    right: 18px;
+    bottom: 24px;
+    z-index: 600;
+    padding: 14px;
+    min-width: 160px;
+}
+
+.legend h4 {
+    color: var(--deep-red);
+    margin-bottom: 10px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 0.88rem;
+    margin-top: 8px;
+}
+
+.legend-color {
+    width: 26px;
+    height: 5px;
+    border-radius: 10px;
+}
+
+.legend-color.red1 { background: #b91c1c; }
+.legend-color.red2 { background: #d97706; }
+.legend-color.red4 { background: #2563eb; }
+.legend-color.red25 { background: #059669; }
+
+.marker-dot {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    background: var(--marker-color);
+    color: #fff;
+    font-weight: 800;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.28);
+}
+
+.marker-active .marker-dot {
+    transform: scale(1.22);
+    box-shadow: 0 0 0 7px rgba(185, 28, 28, 0.18), 0 8px 20px rgba(0, 0, 0, 0.32);
+}
+
+.leaflet-popup-content-wrapper {
+    border-radius: 8px;
+}
+
+@media (max-width: 1080px) {
+    body {
+        overflow: auto;
+    }
+
+    .header {
+        height: auto;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .main-container {
+        height: auto;
+        min-height: calc(100vh - 130px);
+    }
+
+    .panel.active {
+        flex-direction: column;
+    }
+
+    .timeline-panel {
+        width: 100%;
+        max-height: 360px;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .map-panel {
+        height: 62vh;
+        min-height: 460px;
+    }
+}
+
+@media (max-width: 720px) {
+    .header {
+        padding: 14px;
+    }
+
+    .header-main h1 {
+        font-size: 1.45rem;
+    }
+
+    .nav-tabs {
+        width: 100%;
+        justify-content: stretch;
+    }
+
+    .nav-tab {
+        flex: 1 1 42%;
+        padding: 9px 8px;
+    }
+
+    .content-panel {
+        padding: 22px 16px;
+    }
+
+    .map-overlay {
+        position: static;
+        width: auto;
+        margin: 0;
+    }
+
+    .route-filter,
+    .event-summary {
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .legend {
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .battle-card {
+        grid-template-columns: 1fr;
+    }
+
+    .battle-index {
+        min-height: 62px;
+    }
+}
