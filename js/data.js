@@ -194,7 +194,7 @@ const longMarchStories = [
         title: '半条被子',
         tag: '军民情谊',
         location: '湖南汝城沙洲村',
-        cover: 'pictures/半条被子.png',
+        cover: 'pictures/story-01-half-quilt.png',
         excerpt: '三名女红军借宿徐解秀家，临别时把仅有的一条被子剪下一半留给群众。',
         content: '1934年11月，红军长征途经湖南汝城沙洲村，村民徐解秀看到三名衣着单薄的女红军无处落脚，便主动把她们请到自己家暂住。徐家一贫如洗，连一床完整的被子都没有，只能靠稻草和破旧衣物御寒。女红军们看在眼里，记在心里，与徐解秀同吃同住，帮她做家务、照顾孩子，结下了深厚情谊。分别之际，三名女红军决定把自己唯一的一床棉被留给徐解秀，可她坚决不肯收。争执不下时，一位女红军拿出剪刀，将被子剪成两半，把其中一半塞到徐解秀手中，温柔地说：“等革命胜利了，我们一定送你一床新被子！”半条被子虽小，却承载着红军与百姓同甘共苦、血脉相连的深情，成为军民鱼水情最动人的见证。'
     },
@@ -203,7 +203,7 @@ const longMarchStories = [
         title: '彝海结盟',
         tag: '民族团结',
         location: '四川冕宁彝海',
-        cover: 'pictures/彝海结盟.png',
+        cover: 'pictures/story-02-yihai-alliance.png',
         excerpt: '刘伯承与彝族首领小叶丹歃血为盟，为红军顺利通过彝区创造条件。',
         content: '1935年5月，中央红军挺进大凉山彝族聚居区，当地彝族群众因长期受国民党压迫，对陌生军队充满戒备。红军严格执行民族政策，不进村寨、不拿群众一针一线，耐心向彝族同胞宣讲北上抗日的主张。红军总参谋长刘伯承亲自与彝族果基家支首领小叶丹会面，两人一见如故，坦诚交流。为表达信任与团结，双方决定在彝海边举行结盟仪式：以水代酒，歃血为盟，结为兄弟。小叶丹主动担任红军向导，带领队伍安全通过彝区，还选派彝族青年加入红军。彝海结盟不仅为红军北上扫清了障碍，更谱写了民族团结、互信互助的光辉篇章。'
     },
@@ -212,7 +212,7 @@ const longMarchStories = [
         title: '七根火柴',
         tag: '理想信念',
         location: '川西北草地',
-        cover: 'pictures/七根火柴.png',
+        cover: 'pictures/story-03-seven-matches.png',
         excerpt: '生命垂危的战士把党证和七根火柴交给战友，把希望留给队伍。',
         content: '红军穿越川西北草地时，暴雨连绵、寒气刺骨，生火取暖、煮食成了最迫切的需求。一名普通红军战士在行军中不慎陷入沼泽，身体严重冻伤，生命垂危。他用尽最后一丝力气，从贴身的衣袋里掏出一个用油纸仔细包裹的小包，里面是七根干燥的火柴和一本鲜红的党证。他紧紧拉住路过战友的手，颤抖着说：“这是组织的东西，一定要交给部队……火柴能救大家的命。”说完便永远闭上了眼睛。七根火柴微不足道，却在绝境中化作希望的火种，见证了红军战士至死不渝的革命信仰和舍己为集体的崇高精神。'
     },
@@ -221,7 +221,7 @@ const longMarchStories = [
         title: '金色的鱼钩',
         tag: '战友情深',
         location: '草地行军途中',
-        cover: 'pictures/金色鱼钩.png',
+        cover: 'pictures/story-04-golden-fishhook.png',
         excerpt: '老班长用鱼钩为伤病员寻找食物，自己却把困难留给了自己。',
         content: '长征过草地时，一位年近四十的老班长奉命照顾三名生病的小战士。草地荒无人烟，粮食断绝，饥饿和寒冷时刻威胁着生命。老班长把仅有的干粮全部分给小战士，自己却偷偷啃食草根、树皮充饥。为了让伤员补充营养，他用缝衣针弯成一枚鱼钩，趁着休息时悄悄到河边钓鱼。钓来的小鱼他全部煮给小战士吃，自己却一口不尝，只喝剩下的菜汤。日复一日，老班长的身体越来越虚弱，最终在即将走出草地时，因过度劳累和饥饿永远倒下了。那枚普通的鱼钩，虽锈迹斑斑，却闪耀着舍己为人、关爱战友的金色光芒，成为长征精神的永恒象征。'
     },
@@ -230,7 +230,7 @@ const longMarchStories = [
         title: '飞夺泸定桥',
         tag: '英勇突击',
         location: '四川泸定',
-        cover: 'pictures/飞夺泸定桥.png',
+        cover: 'pictures/story-05-luding-bridge.png',
         excerpt: '突击队冒着枪火攀着铁索冲向对岸，夺取北上通道。',
         content: '1935年5月，中央红军突破大渡河天险的关键一战打响。泸定桥横跨大渡河，是红军北上的唯一通道，国民党军队早已拆去桥上木板，只留下十三根寒光闪闪的铁索，还在对岸构筑工事、架起机枪，妄图把红军消灭在桥头。面对天险和强敌，22名红军勇士组成突击队，主动请缨冲锋。他们腰挎手榴弹、手持冲锋枪，冒着密集的炮火，徒手攀着滚烫的铁索向对岸匍匐前进。身后的战士们一边铺木板，一边火力掩护。勇士们无惧生死，冲破枪林弹雨，率先冲上桥头，与敌军展开肉搏战，最终成功夺取泸定桥。飞夺泸定桥创造了军事史上的奇迹，彰显了红军不怕牺牲、勇往直前的英雄气概。'
     },
@@ -239,7 +239,7 @@ const longMarchStories = [
         title: '陈树湘断肠明志',
         tag: '忠诚牺牲',
         location: '湘江战役后',
-        cover: 'pictures/陈树湘断肠明志.png',
+        cover: 'pictures/story-06-chen-shuxiang.png',
         excerpt: '红三十四师师长陈树湘在掩护主力转移后负伤被俘，宁死不屈。',
         content: '1934年湘江战役中，红三十四师担任全军后卫，奉命掩护中央机关和主力部队渡江。面对数十倍于己的国民党军队疯狂进攻，全师将士浴血奋战，坚守阵地数日，用血肉之躯挡住敌人攻势，最终弹尽粮绝，大部分战士壮烈牺牲。师长陈树湘在激战中腹部中弹，身负重伤，不幸被俘。敌人欣喜若狂，准备把他押去邀功请赏。在押送途中，陈树湘为了坚守革命气节，趁敌人不备，强忍剧痛，亲手绞断自己的肠子，壮烈牺牲，年仅29岁。他用生命践行了“为苏维埃流尽最后一滴血”的誓言，诠释了共产党人绝对忠诚、宁死不屈的英雄本色。'
     },
@@ -248,7 +248,7 @@ const longMarchStories = [
         title: '过雪山草地',
         tag: '艰苦卓绝',
         location: '川西北',
-        cover: 'pictures/红军过草地.jpg',
+        cover: 'pictures/story-07-grassland.jpg',
         excerpt: '红军在严寒、缺氧、缺粮中翻雪山、过草地，完成极限行军。',
         content: '长征途中，川西北的雪山草地是最艰险的征程。夹金山等大雪山终年积雪、空气稀薄、气温低至零下几十摄氏度，红军战士大多衣着单薄、脚穿草鞋，很多人在攀登中被严寒冻伤，甚至永远长眠在雪山上。紧接着的茫茫草地，更是死亡陷阱：沼泽遍布、荒无人烟，稍有不慎就会陷入泥潭无法脱身。战士们没有粮食，就吃野菜、啃树皮、煮皮带充饥；没有帐篷，就露天席地而卧；没有道路，就手拉手艰难前行。在极端恶劣的环境下，红军战士靠着坚定的理想信念、钢铁般的纪律和战友间的相互扶持，翻越了一座座雪山，走出了千里沼泽，完成了人类历史上罕见的极限行军，铸就了不怕任何艰难险阻的长征精神。'
     },
@@ -257,7 +257,7 @@ const longMarchStories = [
         title: '一块门板的借据',
         tag: '纪律作风',
         location: '藏区草地',
-        cover: 'pictures/一块门板的借据.png',
+        cover: 'pictures/story-08-door-plank-receipt.png',
         excerpt: '红军借用群众门板铺路，留下借据，体现严明纪律。',
         content: '红军长征进入藏区草地时，道路泥泞不堪、沼泽密布，部队行军和物资运输极为困难。为了搭建临时通道、保障行军安全，红军需要借用群众的木板、门板铺路。部队严格执行“三大纪律八项注意”，绝不擅自取用群众财物。每借用一块门板、一根木料，战士们都会认真登记，留下清晰的借据，写明借用物品、数量和归还承诺，还会把借据放在群众家中显眼的位置或交给当地族长保管。部队离开前，会尽力归还借用物品，若有损坏，会用仅有的物资折价赔偿。当地藏族群众从最初的戒备，到后来被红军严明的纪律和诚信的作风深深感动，主动拿出木料、粮食支援红军。一块门板、一张借据，生动展现了红军纪律严明、爱护群众、诚信守约的优良作风。'
     }
@@ -270,7 +270,7 @@ const mediaResources = {
             title: '延安军民生活',
             location: '延安',
             description: '历史真实影像资料，呈现延安时期军民生活场景。',
-            cover: 'pictures/延安军民生活.png',
+            cover: 'pictures/media-01-yanan-life.png',
             url: 'https://www.bilibili.com/video/BV1uw4m1U7Gv/?spm_id_from=333.337.search-card.all.click&vd_source=f879f805f24540a10cb4c48adf5a1ab1',
             source: 'Bilibili'
         },
@@ -279,7 +279,7 @@ const mediaResources = {
             title: '毛泽东主席在延安',
             location: '延安',
             description: '毛泽东主席在延安时期的历史影像资料。',
-            cover: 'pictures/毛泽东主席在延安.png',
+            cover: 'pictures/media-02-mao-yanan.png',
             url: 'https://www.bilibili.com/video/BV1XWPLzdEtj/?spm_id_from=333.337.search-card.all.click&vd_source=f879f805f24540a10cb4c48adf5a1ab1',
             source: 'Bilibili'
         },
@@ -288,7 +288,7 @@ const mediaResources = {
             title: '斯诺镜头下的长征',
             location: '陕北与长征相关地区',
             description: '以斯诺影像视角呈现红军与长征相关历史画面。',
-            cover: 'pictures/斯诺镜头下的长征.png',
+            cover: 'pictures/media-03-snow-long-march.png',
             url: 'https://www.bilibili.com/video/BV1XNtHziEMu/?spm_id_from=333.337.search-card.all.click&vd_source=f879f805f24540a10cb4c48adf5a1ab1',
             source: 'Bilibili'
         },
@@ -297,7 +297,7 @@ const mediaResources = {
             title: '红军长征影像记录',
             location: '长征沿线',
             description: '红军长征相关历史影像记录资料。',
-            cover: 'pictures/红军长征真实影像.png',
+            cover: 'pictures/media-04-long-march-footage.png',
             url: 'https://www.bilibili.com/video/BV1k8411n7Yz?spm_id_from=333.788.videopod.sections&vd_source=f879f805f24540a10cb4c48adf5a1ab1',
             source: 'Bilibili'
         }
